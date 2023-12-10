@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernNightsRP Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 5px;
+            background-color: #777;
+        }
+
+        nav a:hover {
+            background-color: #999;
+        }
+
+        .discord-button {
+            background-color: #7289DA;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .discord-button:hover {
+            background-color: #677BC4;
+        }
+
+        section {
+            padding: 20px;
+            color: #333;
+        }
+
+        .dashboard-card {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay loop muted>
+        <!-- Replace 'your-video.mp4' with the actual path to your video file -->
+        <source src="C:\Users\deerd\OneDrive\Desktop\ModernNightsRPNetwork-main\gta5rptrailer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>ModernNightsRP Dashboard</h1>
+        <!-- Display username or account information here if authenticated -->
+        <!-- Replace 'John Doe' with the actual username or account information -->
+        <p>Welcome, John Doe!</p>
+    </header>
+
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Products</a>
+        <a href="#">Orders</a>
+        <a href="#">Customers</a>
+        <button class="discord-button" onclick="sendToDiscord()">Send to Discord</button>
+        <!-- Add more navigation links as needed -->
+    </nav>
+
+    <section>
+        <div class="dashboard-card">
+            <h2>Dashboard Card 1</h2>
+            <p>This is a sample dashboard card. You can add more cards and customize the content based on your requirements.</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>Dashboard Card 2</h2>
+            <p>Another sample dashboard card. Customize the content and style according to your needs.</p>
+        </div>
+        
+        <!-- Add more dashboard cards or content as needed -->
+    </section>
+
+    <script>
+        function sendToDiscord() {
+            // Replace 'YOUR_DISCORD_WEBHOOK_URL' with your actual Discord webhook URL
+            const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
+            
+            // Replace 'John Doe' with the actual username or account information
+            const username = 'John Doe';
+            
+            // Customize the message content
+            const message = `New activity from ${username} in the store panel.`;
+
+            // Send data to Discord webhook
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ content: message }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to send data to Discord.');
+                }
+            })
+            .catch(error => {
+                console.error(error.message);
+            });
+        }
+    </script>
+
+</body>
+</html>
