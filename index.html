@@ -1,13 +1,9 @@
-Creating a full-fledged website with a video background, multiple subpages, Discord login, a dashboard, and an application page involves a more complex setup that includes both front-end and back-end development. Below is a simplified example structure to give you an idea. Note that you would need server-side scripting (e.g., using Node.js, Express, Discord OAuth, and a database) for the complete functionality.
-
-**index.html:**
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GTA 5 Roleplay Hub</title>
+  <title>ModernNightsRPNetwork</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -131,6 +127,6 @@ function openLoginModal() {
 function openCreateAccountModal() {
   document.getElementById('createAccountModal').style.display = 'flex';
 }
-```
+
 
 This is a basic structure, and you need to implement server-side logic for login, account creation, Discord OAuth, and database interaction. Make sure to follow security best practices and handle user authentication securely. Replace the form actions in the HTML with actual server endpoints. Additionally, integrate Discord OAuth using the Discord API for the login functionality.
