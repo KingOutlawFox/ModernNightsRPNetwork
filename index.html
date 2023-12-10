@@ -1,45 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ModernNightsRPNetwork</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 5 RolePlay</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .login-button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Add more styling for your forms, etc. */
+    </style>
 </head>
+
 <body>
-  <div class="video-container">
-    <video autoplay muted loop>
-      <source src="your-gta5-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+    <video id="video-background" autoplay muted loop>
+        <source src="C:\Users\deerd\OneDrive\Desktop\ModernNightsRPNetwork-main\gta5rptrailer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
-    <div class="overlay">
-      <header>
-        <h1>GTA 5 Roleplay Hub</h1>
-        <p>Enter the virtual streets of Los Santos and shape your own story.</p>
-      </header>
-      <nav>
-        <a href="#">Home</a>
-        <a href="subpage1.html">Subpage 1</a>
-        <a href="subpage2.html">Subpage 2</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="application.html">Application</a>
-        <button onclick="openLoginModal()">Login</button>
-        <button onclick="openCreateAccountModal()">Create Account</button>
-      </nav>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <div class="button-container">
+            <button class="login-button" onclick="openModal()">Login / Sign Up</button>
+        </div>
+    </nav>
+
+    <div id="content">
+        <h1>Welcome to GTA 5 RolePlay</h1>
+        <p>Your ultimate roleplaying experience in Los Santos!</p>
     </div>
-  </div>
 
-  <!-- Modals for Login and Create Account -->
-  <div id="loginModal" class="modal">
-    <!-- Include server-side login form -->
-    <!-- Example: <form action="login.php" method="post"> ... </form> -->
-  </div>
+    <!-- Login/Signup Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal">&times;</span>
+            <!-- Add your login/signup forms and Discord login here -->
+            <h2>Login / Sign Up</h2>
+            <p>Your content for login and signup forms goes here.</p>
+            <p>Integrate Discord login and link to the dashboard and application page.</p>
+        </div>
+    </div>
 
-  <div id="createAccountModal" class="modal">
-    <!-- Include server-side create account form -->
-    <!-- Example: <form action="create_account.php" method="post"> ... </form> -->
-  </div>
+    <script>
+        function openModal() {
+            document.getElementById('loginModal').style.display = 'block';
+        }
 
-  <script src="script.js"></script>
+        function closeModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+    </script>
 </body>
+
 </html>
